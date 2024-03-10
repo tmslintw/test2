@@ -1,0 +1,49 @@
+﻿@using WebApplication1.Models
+@model IEnumerable<V_Records_With_Wallet>
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+
+<table>
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.Date)</td>
+        <td>Wallet</td>
+        <td>@Html.DisplayNameFor(m => m.Detail)</td>
+        <td>Income</td>
+        <td>Expense</td>
+        <td>Balance</td>
+    </tr>
+    @{
+        decimal balance = 0;
+        foreach (var item in Model)
+        {
+            balance = balance + item.Amt;
+        }
+    }
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Date.ToString("yyyy-MM-dd")</td>
+            <td>@item.Wallet</td>
+            <td>@item.Detail</td>
+            @if (item.Amt > 0)
+            {
+                <td>@((int)item.Amt)</td>
+                <td></td>
+            }
+            else
+            {
+                <td></td>
+                <td>@((int)item.Amt*-1)</td>
+            }
+
+            <td>@balance</td>
+        </tr>
+
+        balance = balance - (int)item.Amt;
+
+    }
+</table>

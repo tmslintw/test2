@@ -121,7 +121,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Wallet" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Wallet" Type="int" Nullable="false" />
     <Property Name="Detail" Type="nvarchar(max)" />
     <Property Name="Amt" Type="money" Nullable="false" />
     <Property Name="Date" Type="date" Nullable="false" />
@@ -165,6 +165,13 @@
     <Property Name="TerritoryID" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="TerritoryDescription" Type="nchar" MaxLength="50" Nullable="false" />
     <Property Name="RegionID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Wallet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Wallet" Type="nvarchar" MaxLength="500" Nullable="false" />
   </EntityType>
   <!--產生期間發現錯誤:
 警告 6002: 資料表/檢視 'D:\SOURCECODE\GITHUB\TEST\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Alphabetical list of products' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
@@ -402,6 +409,23 @@
     <Property Name="OrderID" Type="int" Nullable="false" />
     <Property Name="Subtotal" Type="money" />
   </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'D:\SOURCECODE\GITHUB\TEST\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.V_Records_With_Wallet' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="V_Records_With_Wallet">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="Amt" />
+      <PropertyRef Name="WalletId" />
+      <PropertyRef Name="Wallet" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="Amt" Type="money" Nullable="false" />
+    <Property Name="Detail" Type="nvarchar(max)" />
+    <Property Name="WalletId" Type="int" Nullable="false" />
+    <Property Name="Wallet" Type="nvarchar" MaxLength="500" Nullable="false" />
+  </EntityType>
   <Association Name="FK_CustomerCustomerDemo">
     <End Role="CustomerDemographics" Type="Self.CustomerDemographics" Multiplicity="1" />
     <End Role="CustomerCustomerDemo" Type="Self.CustomerCustomerDemo" Multiplicity="*" />
@@ -595,6 +619,7 @@
     <EntitySet Name="Shippers" EntityType="Self.Shippers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Territories" EntityType="Self.Territories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Wallet" EntityType="Self.Wallet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Alphabetical list of products" EntityType="Self.Alphabetical list of products" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [Alphabetical list of products].[ProductID] AS [ProductID], 
@@ -752,6 +777,16 @@
     [Summary of Sales by Year].[OrderID] AS [OrderID], 
     [Summary of Sales by Year].[Subtotal] AS [Subtotal]
     FROM [dbo].[Summary of Sales by Year] AS [Summary of Sales by Year]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_Records_With_Wallet" EntityType="Self.V_Records_With_Wallet" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_Records_With_Wallet].[Id] AS [Id], 
+    [V_Records_With_Wallet].[Date] AS [Date], 
+    [V_Records_With_Wallet].[Amt] AS [Amt], 
+    [V_Records_With_Wallet].[Detail] AS [Detail], 
+    [V_Records_With_Wallet].[WalletId] AS [WalletId], 
+    [V_Records_With_Wallet].[Wallet] AS [Wallet]
+    FROM [dbo].[V_Records_With_Wallet] AS [V_Records_With_Wallet]</DefiningQuery>
     </EntitySet>
     <AssociationSet Name="FK_CustomerCustomerDemo" Association="Self.FK_CustomerCustomerDemo">
       <End Role="CustomerDemographics" EntitySet="CustomerDemographics" />

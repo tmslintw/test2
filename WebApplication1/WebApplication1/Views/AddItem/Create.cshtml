@@ -1,15 +1,14 @@
 ﻿@model WebApplication1.Models.Record
-
 @{
     ViewBag.Title = "Create";
 }
 
 <h2>Create</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Record</h4>
         <hr />
@@ -22,13 +21,14 @@
             </div>
         </div>-->
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Wallet, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Wallet, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Wallet, "", new { @class = "text-danger" })
-            </div>
+    <div>
+        @Html.LabelFor(model => model.Wallet, htmlAttributes: new { @class = "control-label col-md-2" })
+
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Wallet, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Wallet, "", new { @class = "text-danger" })
         </div>
+    </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.Detail, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -37,7 +37,15 @@
                 @Html.ValidationMessageFor(model => model.Detail, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        <div class="form-group">
+            Income and expense
+            <div class="col-md-10">
+                <select name="iore" class="form-group">
+                    <option value="i">Income</option>
+                    <option value="e">Expense</option>
+                </select>
+            </div>
+        </div>
         <div class="form-group">
             @Html.LabelFor(model => model.Amt, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">

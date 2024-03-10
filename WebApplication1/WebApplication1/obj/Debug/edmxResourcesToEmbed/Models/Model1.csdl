@@ -35,6 +35,7 @@
     <EntitySet Name="Shippers" EntityType="Database1Model.Shipper" />
     <EntitySet Name="Suppliers" EntityType="Database1Model.Supplier" />
     <EntitySet Name="Territories" EntityType="Database1Model.Territory" />
+    <EntitySet Name="Wallets" EntityType="Database1Model.Wallet" />
     <EntitySet Name="Alphabetical_list_of_products" EntityType="Database1Model.Alphabetical_list_of_product" />
     <EntitySet Name="Category_Sales_for_1997" EntityType="Database1Model.Category_Sales_for_1997" />
     <EntitySet Name="Current_Product_Lists" EntityType="Database1Model.Current_Product_List" />
@@ -50,6 +51,7 @@
     <EntitySet Name="Sales_Totals_by_Amounts" EntityType="Database1Model.Sales_Totals_by_Amount" />
     <EntitySet Name="Summary_of_Sales_by_Quarters" EntityType="Database1Model.Summary_of_Sales_by_Quarter" />
     <EntitySet Name="Summary_of_Sales_by_Years" EntityType="Database1Model.Summary_of_Sales_by_Year" />
+    <EntitySet Name="V_Records_With_Wallet" EntityType="Database1Model.V_Records_With_Wallet" />
     <AssociationSet Name="FK_Products_Categories" Association="Database1Model.FK_Products_Categories">
       <End Role="Category" EntitySet="Categories" />
       <End Role="Product" EntitySet="Products" />
@@ -256,7 +258,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Wallet" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Wallet" Type="Int32" Nullable="false" />
     <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Amt" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
     <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
@@ -305,6 +307,13 @@
     <Property Name="RegionID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Region" Relationship="Database1Model.FK_Territories_Region" FromRole="Territory" ToRole="Region" />
     <NavigationProperty Name="Employees" Relationship="Database1Model.EmployeeTerritories" FromRole="Territory" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Wallet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Wallet1" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Alphabetical_list_of_product">
     <Key>
@@ -503,6 +512,21 @@
     <Property Name="ShippedDate" Type="DateTime" Precision="3" />
     <Property Name="OrderID" Type="Int32" Nullable="false" />
     <Property Name="Subtotal" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="V_Records_With_Wallet">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="Amt" />
+      <PropertyRef Name="WalletId" />
+      <PropertyRef Name="Wallet" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Amt" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WalletId" Type="Int32" Nullable="false" />
+    <Property Name="Wallet" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
   </EntityType>
   <Association Name="FK_Products_Categories">
     <End Type="Database1Model.Category" Role="Category" Multiplicity="0..1" />

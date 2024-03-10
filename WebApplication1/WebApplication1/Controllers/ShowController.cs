@@ -12,8 +12,12 @@ namespace WebApplication1.Controllers
         // GET: Show
         public ActionResult Index()
         {
+            return View();
+        }
+        public ActionResult Details()
+        {
             var db = new Database1Entities();
-            var model = db.Records.OrderByDescending(m => m.Date).ToList();
+            var model = db.V_Records_With_Wallet.OrderByDescending(m => m.Date).ToList();
             return View(model);
         }
     }

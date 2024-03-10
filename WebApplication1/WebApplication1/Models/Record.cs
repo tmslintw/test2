@@ -15,7 +15,7 @@ namespace WebApplication1.Models
     public partial class Record
     {
         public int Id { get; set; }
-        public string Wallet { get; set; }
+        public int Wallet { get; set; }
         public string Detail { get; set; }
         public decimal Amt { get; set; }
         public System.DateTime Date { get; set; }

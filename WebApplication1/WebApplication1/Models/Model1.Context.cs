@@ -39,6 +39,7 @@ namespace WebApplication1.Models
         public virtual DbSet<Shipper> Shippers { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
         public virtual DbSet<Territory> Territories { get; set; }
+        public virtual DbSet<Wallet> Wallets { get; set; }
         public virtual DbSet<Alphabetical_list_of_product> Alphabetical_list_of_products { get; set; }
         public virtual DbSet<Category_Sales_for_1997> Category_Sales_for_1997 { get; set; }
         public virtual DbSet<Current_Product_List> Current_Product_Lists { get; set; }
@@ -54,6 +55,7 @@ namespace WebApplication1.Models
         public virtual DbSet<Sales_Totals_by_Amount> Sales_Totals_by_Amounts { get; set; }
         public virtual DbSet<Summary_of_Sales_by_Quarter> Summary_of_Sales_by_Quarters { get; set; }
         public virtual DbSet<Summary_of_Sales_by_Year> Summary_of_Sales_by_Years { get; set; }
+        public virtual DbSet<V_Records_With_Wallet> V_Records_With_Wallet { get; set; }
     
         public virtual ObjectResult<CustOrderHist_Result> CustOrderHist(string customerID)
         {

@@ -229,6 +229,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Wallets">
+      <EntityTypeMapping TypeName="Database1Model.Wallet">
+        <MappingFragment StoreEntitySet="Wallet">
+          <ScalarProperty Name="Wallet1" ColumnName="Wallet" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Alphabetical_list_of_products">
       <EntityTypeMapping TypeName="Database1Model.Alphabetical_list_of_product">
         <MappingFragment StoreEntitySet="Alphabetical list of products">
@@ -414,6 +422,18 @@
           <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
           <ScalarProperty Name="OrderID" ColumnName="OrderID" />
           <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_Records_With_Wallet">
+      <EntityTypeMapping TypeName="Database1Model.V_Records_With_Wallet">
+        <MappingFragment StoreEntitySet="V_Records_With_Wallet">
+          <ScalarProperty Name="Wallet" ColumnName="Wallet" />
+          <ScalarProperty Name="WalletId" ColumnName="WalletId" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="Amt" ColumnName="Amt" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

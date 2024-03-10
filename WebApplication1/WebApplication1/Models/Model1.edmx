@@ -126,7 +126,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Wallet" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Wallet" Type="int" Nullable="false" />
           <Property Name="Detail" Type="nvarchar(max)" />
           <Property Name="Amt" Type="money" Nullable="false" />
           <Property Name="Date" Type="date" Nullable="false" />
@@ -170,6 +170,13 @@
           <Property Name="TerritoryID" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="TerritoryDescription" Type="nchar" MaxLength="50" Nullable="false" />
           <Property Name="RegionID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Wallet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Wallet" Type="nvarchar" MaxLength="500" Nullable="false" />
         </EntityType>
         <!--產生期間發現錯誤:
 警告 6002: 資料表/檢視 'D:\SOURCECODE\GITHUB\TEST\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Alphabetical list of products' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
@@ -407,6 +414,23 @@
           <Property Name="OrderID" Type="int" Nullable="false" />
           <Property Name="Subtotal" Type="money" />
         </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'D:\SOURCECODE\GITHUB\TEST\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.V_Records_With_Wallet' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="V_Records_With_Wallet">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Date" />
+            <PropertyRef Name="Amt" />
+            <PropertyRef Name="WalletId" />
+            <PropertyRef Name="Wallet" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Amt" Type="money" Nullable="false" />
+          <Property Name="Detail" Type="nvarchar(max)" />
+          <Property Name="WalletId" Type="int" Nullable="false" />
+          <Property Name="Wallet" Type="nvarchar" MaxLength="500" Nullable="false" />
+        </EntityType>
         <Association Name="FK_CustomerCustomerDemo">
           <End Role="CustomerDemographics" Type="Self.CustomerDemographics" Multiplicity="1" />
           <End Role="CustomerCustomerDemo" Type="Self.CustomerCustomerDemo" Multiplicity="*" />
@@ -600,6 +624,7 @@
           <EntitySet Name="Shippers" EntityType="Self.Shippers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Territories" EntityType="Self.Territories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Wallet" EntityType="Self.Wallet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Alphabetical list of products" EntityType="Self.Alphabetical list of products" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [Alphabetical list of products].[ProductID] AS [ProductID], 
@@ -758,6 +783,16 @@
     [Summary of Sales by Year].[Subtotal] AS [Subtotal]
     FROM [dbo].[Summary of Sales by Year] AS [Summary of Sales by Year]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="V_Records_With_Wallet" EntityType="Self.V_Records_With_Wallet" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_Records_With_Wallet].[Id] AS [Id], 
+    [V_Records_With_Wallet].[Date] AS [Date], 
+    [V_Records_With_Wallet].[Amt] AS [Amt], 
+    [V_Records_With_Wallet].[Detail] AS [Detail], 
+    [V_Records_With_Wallet].[WalletId] AS [WalletId], 
+    [V_Records_With_Wallet].[Wallet] AS [Wallet]
+    FROM [dbo].[V_Records_With_Wallet] AS [V_Records_With_Wallet]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_CustomerCustomerDemo" Association="Self.FK_CustomerCustomerDemo">
             <End Role="CustomerDemographics" EntitySet="CustomerDemographics" />
             <End Role="CustomerCustomerDemo" EntitySet="CustomerCustomerDemo" />
@@ -850,6 +885,7 @@
           <EntitySet Name="Shippers" EntityType="Database1Model.Shipper" />
           <EntitySet Name="Suppliers" EntityType="Database1Model.Supplier" />
           <EntitySet Name="Territories" EntityType="Database1Model.Territory" />
+          <EntitySet Name="Wallets" EntityType="Database1Model.Wallet" />
           <EntitySet Name="Alphabetical_list_of_products" EntityType="Database1Model.Alphabetical_list_of_product" />
           <EntitySet Name="Category_Sales_for_1997" EntityType="Database1Model.Category_Sales_for_1997" />
           <EntitySet Name="Current_Product_Lists" EntityType="Database1Model.Current_Product_List" />
@@ -865,6 +901,7 @@
           <EntitySet Name="Sales_Totals_by_Amounts" EntityType="Database1Model.Sales_Totals_by_Amount" />
           <EntitySet Name="Summary_of_Sales_by_Quarters" EntityType="Database1Model.Summary_of_Sales_by_Quarter" />
           <EntitySet Name="Summary_of_Sales_by_Years" EntityType="Database1Model.Summary_of_Sales_by_Year" />
+          <EntitySet Name="V_Records_With_Wallet" EntityType="Database1Model.V_Records_With_Wallet" />
           <AssociationSet Name="FK_Products_Categories" Association="Database1Model.FK_Products_Categories">
             <End Role="Category" EntitySet="Categories" />
             <End Role="Product" EntitySet="Products" />
@@ -1071,7 +1108,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Wallet" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Wallet" Type="Int32" Nullable="false" />
           <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Amt" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
@@ -1120,6 +1157,13 @@
           <Property Name="RegionID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Region" Relationship="Database1Model.FK_Territories_Region" FromRole="Territory" ToRole="Region" />
           <NavigationProperty Name="Employees" Relationship="Database1Model.EmployeeTerritories" FromRole="Territory" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Wallet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Wallet1" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Alphabetical_list_of_product">
           <Key>
@@ -1318,6 +1362,21 @@
           <Property Name="ShippedDate" Type="DateTime" Precision="3" />
           <Property Name="OrderID" Type="Int32" Nullable="false" />
           <Property Name="Subtotal" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="V_Records_With_Wallet">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Date" />
+            <PropertyRef Name="Amt" />
+            <PropertyRef Name="WalletId" />
+            <PropertyRef Name="Wallet" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Amt" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WalletId" Type="Int32" Nullable="false" />
+          <Property Name="Wallet" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_Products_Categories">
           <End Type="Database1Model.Category" Role="Category" Multiplicity="0..1" />
@@ -1669,6 +1728,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Wallets">
+            <EntityTypeMapping TypeName="Database1Model.Wallet">
+              <MappingFragment StoreEntitySet="Wallet">
+                <ScalarProperty Name="Wallet1" ColumnName="Wallet" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Alphabetical_list_of_products">
             <EntityTypeMapping TypeName="Database1Model.Alphabetical_list_of_product">
               <MappingFragment StoreEntitySet="Alphabetical list of products">
@@ -1854,6 +1921,18 @@
                 <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_Records_With_Wallet">
+            <EntityTypeMapping TypeName="Database1Model.V_Records_With_Wallet">
+              <MappingFragment StoreEntitySet="V_Records_With_Wallet">
+                <ScalarProperty Name="Wallet" ColumnName="Wallet" />
+                <ScalarProperty Name="WalletId" ColumnName="WalletId" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="Amt" ColumnName="Amt" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

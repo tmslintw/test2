@@ -9,12 +9,16 @@ namespace WebApplication1.Controllers
 {
     public class AddItemController : Controller
     {
+        public class Wallets
+        {
+            //新增屬性可使用快捷鍵prop產生
+            public int Id { get; set; }
+            public string Name { get; set; }
+        }
         // GET: AddItem
         public ActionResult Index()
-        {
-            var db = new Database1Entities();
-            var model = db.Records.ToList();
-            return View(model);
+        {            
+            return View();
         }
 
         public ActionResult Create()
@@ -23,8 +27,13 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Record record)
+        public ActionResult Create(Record record, FormCollection obj)
         {
+            ViewBag.iore = obj["iore"];
+            if (ViewBag.iore == "e")
+            {
+                record.Amt=-record.Amt;
+            }
             var db = new Database1Entities();
             db.Records.Add(record);
             try
