@@ -21,6 +21,48 @@ namespace WebApplication1.Controllers
             return View();
         }
 
+
+        public ActionResult CreateWallet()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateWallet(Wallet wallet)
+        {
+            var db = new Database1Entities();
+            bool exist = false;
+            foreach(var item in db.Wallets.ToList())
+                {
+                if (item.Wallet1 == wallet.Wallet1)
+                {
+                    exist= true;
+                    break;
+                }
+                }
+            if (exist != true)
+            {
+
+                db.Wallets.Add(wallet);
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                ViewBag.Wallet1 = wallet.Wallet1;
+                return View();
+            }
+            
+        }
+ 
         public ActionResult Create()
         {
             var db = new Database1Entities();
