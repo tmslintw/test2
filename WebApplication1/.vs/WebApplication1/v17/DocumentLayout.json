@@ -1,28 +1,36 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\SourceCode\\source\\repos\\WebApplication1\\",
+  "WorkspaceRootPath": "D:\\SourceCode\\GitHub\\test\\WebApplication1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\a7804\\AppData\\Local\\Temp\\jcl40csn..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
+      "AbsoluteMoniker": "D:0:0:{BDE2D84D-9271-46C5-9645-B82877F3FD0B}|WebApplication1\\WebApplication1.csproj|d:\\sourcecode\\github\\test\\webapplication1\\webapplication1\\controllers\\showcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDE2D84D-9271-46C5-9645-B82877F3FD0B}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\showcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BDE2D84D-9271-46C5-9645-B82877F3FD0B}|WebApplication1\\WebApplication1.csproj|d:\\sourcecode\\source\\repos\\webapplication1\\webapplication1\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
-      "RelativeMoniker": "D:0:0:{BDE2D84D-9271-46C5-9645-B82877F3FD0B}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+      "AbsoluteMoniker": "D:0:0:{BDE2D84D-9271-46C5-9645-B82877F3FD0B}|WebApplication1\\WebApplication1.csproj|d:\\sourcecode\\github\\test\\webapplication1\\webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE2D84D-9271-46C5-9645-B82877F3FD0B}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\a7804\\AppData\\Local\\Temp\\gxivhq2o..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
+      "AbsoluteMoniker": "D:0:0:{BDE2D84D-9271-46C5-9645-B82877F3FD0B}|WebApplication1\\WebApplication1.csproj|D:\\SourceCode\\GitHub\\test\\WebApplication1\\webapplication1\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE2D84D-9271-46C5-9645-B82877F3FD0B}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\a7804\\AppData\\Local\\Temp\\gxivhq2o..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+      "AbsoluteMoniker": "D:0:0:{BDE2D84D-9271-46C5-9645-B82877F3FD0B}|WebApplication1\\WebApplication1.csproj|D:\\SourceCode\\GitHub\\test\\WebApplication1\\WebApplication1\\Views\\AddItem\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE2D84D-9271-46C5-9645-B82877F3FD0B}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Views\\AddItem\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\a7804\\AppData\\Local\\Temp\\gxivhq2o..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|ResultFrame"
+      "AbsoluteMoniker": "D:0:0:{BDE2D84D-9271-46C5-9645-B82877F3FD0B}|WebApplication1\\WebApplication1.csproj|D:\\SourceCode\\GitHub\\test\\WebApplication1\\webapplication1\\views\\additem\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE2D84D-9271-46C5-9645-B82877F3FD0B}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\additem\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\a7804\\AppData\\Local\\Temp\\jcl40csn..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/D__SOURCECODE_GITHUB_TEST_WEBAPPLICATION1_WEBAPPLICATION1_APP_DATA_DATABASE1.MDF/True/SqlTable/dbo.Record.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\a7804\\AppData\\Local\\Temp\\jcl40csn..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|ResultFrame"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\a7804\\AppData\\Local\\Temp\\1hcmc3yb..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE2D84D-9271-46C5-9645-B82877F3FD0B}|WebApplication1\\WebApplication1.csproj|D:\\SourceCode\\GitHub\\test\\WebApplication1\\WebApplication1\\Controllers\\AddItemController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDE2D84D-9271-46C5-9645-B82877F3FD0B}|WebApplication1\\WebApplication1.csproj|solutionrelative:WebApplication1\\Controllers\\AddItemController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -32,42 +40,103 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Model1.edmx [Diagram1]",
-              "DocumentMoniker": "D:\\SourceCode\\source\\repos\\WebApplication1\\WebApplication1\\Models\\Model1.edmx",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\Model1.edmx",
-              "ToolTip": "D:\\SourceCode\\source\\repos\\WebApplication1\\WebApplication1\\Models\\Model1.edmx [Diagram1]",
-              "RelativeToolTip": "WebApplication1\\Models\\Model1.edmx [Diagram1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2024-03-09T09:41:08.362Z",
-              "EditorCaption": " [Diagram1]"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SQLQuery2.sql ",
-              "DocumentMoniker": "C:\\Users\\a7804\\AppData\\Local\\Temp\\jcl40csn..sql",
-              "ToolTip": "SQLQuery2.sql *",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-03-09T09:38:52.007Z",
+              "Title": "ShowController.cs",
+              "DocumentMoniker": "D:\\SourceCode\\GitHub\\test\\WebApplication1\\WebApplication1\\Controllers\\ShowController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\ShowController.cs",
+              "ToolTip": "D:\\SourceCode\\GitHub\\test\\WebApplication1\\WebApplication1\\Controllers\\ShowController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\ShowController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-10T12:08:47.7Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\SourceCode\\GitHub\\test\\WebApplication1\\WebApplication1\\Views\\AddItem\\Create.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\AddItem\\Create.cshtml",
+              "ToolTip": "D:\\SourceCode\\GitHub\\test\\WebApplication1\\WebApplication1\\Views\\AddItem\\Create.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\AddItem\\Create.cshtml",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAAABQAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-10T09:59:22.161Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "SQLQuery1.sql ",
-              "DocumentMoniker": "C:\\Users\\a7804\\AppData\\Local\\Temp\\gxivhq2o..sql",
-              "ToolTip": "SQLQuery1.sql *",
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "D:\\SourceCode\\GitHub\\test\\WebApplication1\\WebApplication1\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\_ViewStart.cshtml",
+              "ToolTip": "D:\\SourceCode\\GitHub\\test\\WebApplication1\\WebApplication1\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\_ViewStart.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-10T12:03:22.579Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "dbo.Record [\u8CC7\u6599]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/D__SOURCECODE_GITHUB_TEST_WEBAPPLICATION1_WEBAPPLICATION1_APP_DATA_DATABASE1.MDF/True/SqlTable/dbo.Record.sql",
+              "ToolTip": "dbo.Record [\u8CC7\u6599]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-03-08T17:40:10.031Z",
+              "WhenOpened": "2024-03-10T11:43:46.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SQLQuery2.sql ",
+              "DocumentMoniker": "C:\\Users\\a7804\\AppData\\Local\\Temp\\1hcmc3yb..sql",
+              "ToolTip": "SQLQuery2.sql *",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-03-10T11:43:36.565Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AddItemController.cs",
+              "DocumentMoniker": "D:\\SourceCode\\GitHub\\test\\WebApplication1\\WebApplication1\\Controllers\\AddItemController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\AddItemController.cs",
+              "ToolTip": "D:\\SourceCode\\GitHub\\test\\WebApplication1\\WebApplication1\\Controllers\\AddItemController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\AddItemController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-10T08:49:05.013Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\SourceCode\\GitHub\\test\\WebApplication1\\WebApplication1\\Views\\AddItem\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\AddItem\\Index.cshtml",
+              "ToolTip": "D:\\SourceCode\\GitHub\\test\\WebApplication1\\WebApplication1\\Views\\AddItem\\Index.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\AddItem\\Index.cshtml",
+              "ViewState": "AQIAAAwAAABwmpmZmZkuwBIAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-10T06:42:24.817Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\SourceCode\\GitHub\\test\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\SourceCode\\GitHub\\test\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAhwBQAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-10T06:24:58.43Z",
               "EditorCaption": ""
             }
           ]

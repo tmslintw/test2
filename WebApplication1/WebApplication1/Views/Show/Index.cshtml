@@ -1,0 +1,24 @@
+﻿@using WebApplication1.Models
+@model IEnumerable<Record>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table>
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.Date)</td>
+        <td>@Html.DisplayNameFor(m => m.Detail)</td>
+        <td>@Html.DisplayNameFor(m => m.Amt)</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Date.ToString("yyyy-MM-dd")</td>
+            <td>@item.Detail</td>
+            <td>@((int)item.Amt)</td>
+        </tr>
+    }
+</table>
+

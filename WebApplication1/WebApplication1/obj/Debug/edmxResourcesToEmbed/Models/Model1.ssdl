@@ -116,6 +116,16 @@
     <Property Name="ReorderLevel" Type="smallint" />
     <Property Name="Discontinued" Type="bit" Nullable="false" />
   </EntityType>
+  <EntityType Name="Record">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Wallet" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Detail" Type="nvarchar(max)" />
+    <Property Name="Amt" Type="money" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+  </EntityType>
   <EntityType Name="Region">
     <Key>
       <PropertyRef Name="RegionID" />
@@ -157,7 +167,7 @@
     <Property Name="RegionID" Type="int" Nullable="false" />
   </EntityType>
   <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'D:\SOURCECODE\SOURCE\REPOS\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Alphabetical list of products' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+警告 6002: 資料表/檢視 'D:\SOURCECODE\GITHUB\TEST\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Alphabetical list of products' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
   <EntityType Name="Alphabetical list of products">
     <Key>
       <PropertyRef Name="ProductID" />
@@ -178,7 +188,7 @@
     <Property Name="CategoryName" Type="nvarchar" MaxLength="15" Nullable="false" />
   </EntityType>
   <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'D:\SOURCECODE\SOURCE\REPOS\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Category Sales for 1997' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+警告 6002: 資料表/檢視 'D:\SOURCECODE\GITHUB\TEST\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Category Sales for 1997' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
   <EntityType Name="Category Sales for 1997">
     <Key>
       <PropertyRef Name="CategoryName" />
@@ -187,7 +197,7 @@
     <Property Name="CategorySales" Type="money" />
   </EntityType>
   <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'D:\SOURCECODE\SOURCE\REPOS\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Current Product List' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+警告 6002: 資料表/檢視 'D:\SOURCECODE\GITHUB\TEST\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Current Product List' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
   <EntityType Name="Current Product List">
     <Key>
       <PropertyRef Name="ProductID" />
@@ -197,7 +207,7 @@
     <Property Name="ProductName" Type="nvarchar" MaxLength="40" Nullable="false" />
   </EntityType>
   <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'D:\SOURCECODE\SOURCE\REPOS\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Customer and Suppliers by City' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+警告 6002: 資料表/檢視 'D:\SOURCECODE\GITHUB\TEST\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Customer and Suppliers by City' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
   <EntityType Name="Customer and Suppliers by City">
     <Key>
       <PropertyRef Name="CompanyName" />
@@ -209,7 +219,7 @@
     <Property Name="Relationship" Type="varchar" MaxLength="9" Nullable="false" />
   </EntityType>
   <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'D:\SOURCECODE\SOURCE\REPOS\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Invoices' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+警告 6002: 資料表/檢視 'D:\SOURCECODE\GITHUB\TEST\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Invoices' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
   <EntityType Name="Invoices">
     <Key>
       <PropertyRef Name="CustomerName" />
@@ -250,7 +260,7 @@
     <Property Name="Freight" Type="money" />
   </EntityType>
   <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'D:\SOURCECODE\SOURCE\REPOS\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Order Details Extended' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+警告 6002: 資料表/檢視 'D:\SOURCECODE\GITHUB\TEST\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Order Details Extended' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
   <EntityType Name="Order Details Extended">
     <Key>
       <PropertyRef Name="OrderID" />
@@ -269,7 +279,7 @@
     <Property Name="ExtendedPrice" Type="money" />
   </EntityType>
   <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'D:\SOURCECODE\SOURCE\REPOS\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Order Subtotals' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+警告 6002: 資料表/檢視 'D:\SOURCECODE\GITHUB\TEST\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Order Subtotals' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
   <EntityType Name="Order Subtotals">
     <Key>
       <PropertyRef Name="OrderID" />
@@ -278,7 +288,7 @@
     <Property Name="Subtotal" Type="money" />
   </EntityType>
   <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'D:\SOURCECODE\SOURCE\REPOS\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Orders Qry' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+警告 6002: 資料表/檢視 'D:\SOURCECODE\GITHUB\TEST\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Orders Qry' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
   <EntityType Name="Orders Qry">
     <Key>
       <PropertyRef Name="OrderID" />
@@ -306,7 +316,7 @@
     <Property Name="Country" Type="nvarchar" MaxLength="15" />
   </EntityType>
   <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'D:\SOURCECODE\SOURCE\REPOS\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Product Sales for 1997' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+警告 6002: 資料表/檢視 'D:\SOURCECODE\GITHUB\TEST\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Product Sales for 1997' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
   <EntityType Name="Product Sales for 1997">
     <Key>
       <PropertyRef Name="CategoryName" />
@@ -317,7 +327,7 @@
     <Property Name="ProductSales" Type="money" />
   </EntityType>
   <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'D:\SOURCECODE\SOURCE\REPOS\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Products Above Average Price' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+警告 6002: 資料表/檢視 'D:\SOURCECODE\GITHUB\TEST\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Products Above Average Price' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
   <EntityType Name="Products Above Average Price">
     <Key>
       <PropertyRef Name="ProductName" />
@@ -326,7 +336,7 @@
     <Property Name="UnitPrice" Type="money" />
   </EntityType>
   <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'D:\SOURCECODE\SOURCE\REPOS\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Products by Category' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+警告 6002: 資料表/檢視 'D:\SOURCECODE\GITHUB\TEST\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Products by Category' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
   <EntityType Name="Products by Category">
     <Key>
       <PropertyRef Name="CategoryName" />
@@ -340,7 +350,7 @@
     <Property Name="Discontinued" Type="bit" Nullable="false" />
   </EntityType>
   <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'D:\SOURCECODE\SOURCE\REPOS\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Quarterly Orders' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
+警告 6013: 資料表/檢視 'D:\SOURCECODE\GITHUB\TEST\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Quarterly Orders' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
         <EntityType Name="Quarterly Orders">
           <Property Name="CustomerID" Type="nchar" MaxLength="5" />
           <Property Name="CompanyName" Type="nvarchar" MaxLength="40" />
@@ -348,7 +358,7 @@
           <Property Name="Country" Type="nvarchar" MaxLength="15" />
         </EntityType>-->
   <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'D:\SOURCECODE\SOURCE\REPOS\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Sales by Category' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+警告 6002: 資料表/檢視 'D:\SOURCECODE\GITHUB\TEST\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Sales by Category' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
   <EntityType Name="Sales by Category">
     <Key>
       <PropertyRef Name="CategoryID" />
@@ -361,7 +371,7 @@
     <Property Name="ProductSales" Type="money" />
   </EntityType>
   <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'D:\SOURCECODE\SOURCE\REPOS\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Sales Totals by Amount' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+警告 6002: 資料表/檢視 'D:\SOURCECODE\GITHUB\TEST\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Sales Totals by Amount' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
   <EntityType Name="Sales Totals by Amount">
     <Key>
       <PropertyRef Name="OrderID" />
@@ -373,7 +383,7 @@
     <Property Name="ShippedDate" Type="datetime" />
   </EntityType>
   <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'D:\SOURCECODE\SOURCE\REPOS\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Summary of Sales by Quarter' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+警告 6002: 資料表/檢視 'D:\SOURCECODE\GITHUB\TEST\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Summary of Sales by Quarter' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
   <EntityType Name="Summary of Sales by Quarter">
     <Key>
       <PropertyRef Name="OrderID" />
@@ -383,7 +393,7 @@
     <Property Name="Subtotal" Type="money" />
   </EntityType>
   <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'D:\SOURCECODE\SOURCE\REPOS\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Summary of Sales by Year' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+警告 6002: 資料表/檢視 'D:\SOURCECODE\GITHUB\TEST\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Summary of Sales by Year' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
   <EntityType Name="Summary of Sales by Year">
     <Key>
       <PropertyRef Name="OrderID" />
@@ -580,6 +590,7 @@
     <EntitySet Name="Order Details" EntityType="Self.Order Details" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Record" EntityType="Self.Record" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Region" EntityType="Self.Region" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Shippers" EntityType="Self.Shippers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />

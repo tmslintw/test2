@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "\u5DE5\u4F5C-Model1",
+      "appliesTo": "WebApplication1/Models/Model1.edmx",
+      "type": "launch"
+    }
+  ]
+}
