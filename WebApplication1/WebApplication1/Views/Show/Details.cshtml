@@ -1,29 +1,27 @@
-﻿@using WebApplication1.Models
-@model IEnumerable<V_Records_With_Wallet>
+﻿@model WebApplication1.Models.ViewRecordsModel
 @{
     ViewBag.Title = "Details";
 }
 
 <h2>Details</h2>
 
-
 <table>
     <tr>
-        <td>@Html.DisplayNameFor(m => m.Date)</td>
+        <td>Date</td>
         <td>Wallet</td>
-        <td>@Html.DisplayNameFor(m => m.Detail)</td>
+        <td>Detail</td>
         <td>Income</td>
         <td>Expense</td>
         <td>Balance</td>
     </tr>
     @{
         decimal balance = 0;
-        foreach (var item in Model)
+        foreach (var item in Model.recordslist)
         {
             balance = balance + item.Amt;
         }
     }
-    @foreach (var item in Model)
+    @foreach (var item in Model.recordslist)
     {
         <tr>
             <td>@item.Date.ToString("yyyy-MM-dd")</td>

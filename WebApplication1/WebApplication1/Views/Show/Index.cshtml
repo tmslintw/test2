@@ -1,9 +1,25 @@
-﻿
+﻿@using WebApplication1.Models
+@model IEnumerable<Wallet>
+
 @{
     ViewBag.Title = "Index";
 }
 
+
 <h2>Index</h2>
+<div class="container">
+    <form method="post" action="~/Show/Details">
+        <select name="walletid">
+            @foreach (var item in Model)
+            {
+                <option value=@item.Id>@item.Wallet1</option>
+            }
+        </select>
+
+        <input type="submit" name="submit" value="View" class="btn btn-primary" />
+    </form>
+</div>
+
 <p>
     @Html.ActionLink("ViewDetails", "Details")
 </p>

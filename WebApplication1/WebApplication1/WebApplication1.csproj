@@ -219,6 +219,7 @@
     <Compile Include="Models\Record.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\AddRecords.cs" />
     <Compile Include="Models\Region.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -252,6 +253,7 @@
     <Compile Include="Models\Territory.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewRecords.cs" />
     <Compile Include="Models\V_Records_With_Wallet.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -333,9 +335,9 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\AddItem\Index.cshtml" />
-    <Content Include="Views\AddItem\Create.cshtml" />
     <Content Include="Views\Show\Index.cshtml" />
     <Content Include="Views\Show\Details.cshtml" />
+    <Content Include="Views\AddItem\Create.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -1,4 +1,4 @@
-﻿@model WebApplication1.Models.Record
+﻿@model WebApplication1.Models.AddRecordModel
 @{
     ViewBag.Title = "Create";
 }
@@ -13,28 +13,33 @@
         <h4>Record</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <!--<div class="form-group">
-            @Html.LabelFor(model => model.Id, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Id, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Id, "", new { @class = "text-danger" })
-            </div>
-        </div>-->
 
     <div>
-        @Html.LabelFor(model => model.Wallet, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.records.Wallet, htmlAttributes: new { @class = "control-label col-md-2" })
+        @{ 
+            List<SelectListItem> walletlist = new List<SelectListItem>();
+            foreach (var item in Model.walletlist) {
+
+                walletlist.Add(new SelectListItem()
+                {
+                    Text = item.Wallet1,
+                    Value = item.Id.ToString(),
+                    Selected = false
+                });
+            }
+        }
 
         <div class="col-md-10">
-            @Html.EditorFor(model => model.Wallet, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Wallet, "", new { @class = "text-danger" })
+            @Html.DropDownListFor(model => model.records.Wallet,walletlist,new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.records.Wallet, "", new { @class = "text-danger" })
         </div>
     </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Detail, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.records.Detail, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Detail, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Detail, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.records.Detail, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.records.Detail, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
@@ -47,18 +52,18 @@
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.Amt, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.records.Amt, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Amt, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Amt, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.records.Amt, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.records.Amt, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.records.Date, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.records.Date, new { htmlAttributes = new { @class = "form-control",@type = "date" , @Value = DateTime.Now.ToString("yyyy-MM-dd") } })
+                @Html.ValidationMessageFor(model => model.records.Date, "", new { @class = "text-danger" })
             </div>
         </div>
 

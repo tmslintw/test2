@@ -23,19 +23,22 @@ namespace WebApplication1.Controllers
 
         public ActionResult Create()
         {
-            return View();
+            var db = new Database1Entities();
+            AddRecordModel recordModel = new AddRecordModel();
+            recordModel.walletlist = db.Wallets.ToList();
+            return View(recordModel);
         }
 
         [HttpPost]
-        public ActionResult Create(Record record, FormCollection obj)
+        public ActionResult Create(AddRecordModel record, FormCollection obj)
         {
             ViewBag.iore = obj["iore"];
             if (ViewBag.iore == "e")
             {
-                record.Amt=-record.Amt;
+                record.records.Amt=-record.records.Amt;
             }
             var db = new Database1Entities();
-            db.Records.Add(record);
+            db.Records.Add(record.records);
             try
             {
 
