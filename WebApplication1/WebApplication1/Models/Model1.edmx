@@ -5,47 +5,36 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Record">
+        <EntityType Name="t_Emp">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="UserID" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Wallet" Type="int" Nullable="false" />
-          <Property Name="Detail" Type="nvarchar(max)" />
-          <Property Name="Amt" Type="money" Nullable="false" />
-          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="UserMail" Type="nvarchar(max)" />
+          <Property Name="TitleNo" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="Wallet">
+        <EntityType Name="t_Title">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="TitleNo" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Wallet" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="TitleNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TitleName" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'D:\SOURCECODE\GITHUB\TEST\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.Quarterly Orders' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
-        <EntityType Name="Quarterly Orders">
-          <Property Name="CustomerID" Type="nchar" MaxLength="5" />
-          <Property Name="CompanyName" Type="nvarchar" MaxLength="40" />
-          <Property Name="City" Type="nvarchar" MaxLength="15" />
-          <Property Name="Country" Type="nvarchar" MaxLength="15" />
-        </EntityType>-->
-        <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'D:\SOURCECODE\GITHUB\TEST\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.V_Records_With_Wallet' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
-        <EntityType Name="V_Records_With_Wallet">
+警告 6002: 資料表/檢視 'D:\SOURCECODE\GITHUB\TEST2\WEBAPPLICATION1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.V_Emplyee_with_Title' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="V_Emplyee_with_Title">
           <Key>
-            <PropertyRef Name="Id" />
-            <PropertyRef Name="Date" />
-            <PropertyRef Name="Amt" />
-            <PropertyRef Name="WalletId" />
-            <PropertyRef Name="Wallet" />
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="TitleNo" />
+            <PropertyRef Name="TileName" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Date" Type="date" Nullable="false" />
-          <Property Name="Amt" Type="money" Nullable="false" />
-          <Property Name="Detail" Type="nvarchar(max)" />
-          <Property Name="WalletId" Type="int" Nullable="false" />
-          <Property Name="Wallet" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="UserMail" Type="nvarchar(max)" />
+          <Property Name="TitleNo" Type="int" Nullable="false" />
+          <Property Name="TileName" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <Function Name="CustOrderHist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CustomerID" Type="nchar" Mode="In" />
@@ -70,17 +59,16 @@
         </Function>
         <Function Name="Ten_Most_Expensive_Products" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Ten Most Expensive Products" />
         <EntityContainer Name="Database1ModelStoreContainer">
-          <EntitySet Name="Record" EntityType="Self.Record" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Wallet" EntityType="Self.Wallet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="V_Records_With_Wallet" EntityType="Self.V_Records_With_Wallet" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="t_Emp" EntityType="Self.t_Emp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t_Title" EntityType="Self.t_Title" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="V_Emplyee_with_Title" EntityType="Self.V_Emplyee_with_Title" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [V_Records_With_Wallet].[Id] AS [Id], 
-    [V_Records_With_Wallet].[Date] AS [Date], 
-    [V_Records_With_Wallet].[Amt] AS [Amt], 
-    [V_Records_With_Wallet].[Detail] AS [Detail], 
-    [V_Records_With_Wallet].[WalletId] AS [WalletId], 
-    [V_Records_With_Wallet].[Wallet] AS [Wallet]
-    FROM [dbo].[V_Records_With_Wallet] AS [V_Records_With_Wallet]</DefiningQuery>
+    [V_Emplyee_with_Title].[UserID] AS [UserID], 
+    [V_Emplyee_with_Title].[UserName] AS [UserName], 
+    [V_Emplyee_with_Title].[UserMail] AS [UserMail], 
+    [V_Emplyee_with_Title].[TitleNo] AS [TitleNo], 
+    [V_Emplyee_with_Title].[TileName] AS [TileName]
+    FROM [dbo].[V_Emplyee_with_Title] AS [V_Emplyee_with_Title]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -110,9 +98,9 @@
             <Parameter Name="OrdYear" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Ten_Most_Expensive_Products" ReturnType="Collection(Database1Model.Ten_Most_Expensive_Products_Result)" />
-          <EntitySet Name="Records" EntityType="Database1Model.Record" />
-          <EntitySet Name="Wallets" EntityType="Database1Model.Wallet" />
-          <EntitySet Name="V_Records_With_Wallet" EntityType="Database1Model.V_Records_With_Wallet" />
+          <EntitySet Name="t_Emp" EntityType="Database1Model.t_Emp" />
+          <EntitySet Name="t_Title" EntityType="Database1Model.t_Title" />
+          <EntitySet Name="V_Emplyee_with_Title" EntityType="Database1Model.V_Emplyee_with_Title" />
           </EntityContainer>
         <ComplexType Name="CustOrderHist_Result">
           <Property Type="String" Name="ProductName" Nullable="false" MaxLength="40" />
@@ -153,37 +141,34 @@
           <Property Type="String" Name="TenMostExpensiveProducts" Nullable="false" MaxLength="40" />
           <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="19" />
         </ComplexType>
-        <EntityType Name="Record">
+        <EntityType Name="t_Emp">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="UserID" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Wallet" Type="Int32" Nullable="false" />
-          <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Amt" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserMail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TitleNo" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="Wallet">
+        <EntityType Name="t_Title">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="TitleNo" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Wallet1" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TitleNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TitleName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="V_Records_With_Wallet">
+        <EntityType Name="V_Emplyee_with_Title">
           <Key>
-            <PropertyRef Name="Id" />
-            <PropertyRef Name="Date" />
-            <PropertyRef Name="Amt" />
-            <PropertyRef Name="WalletId" />
-            <PropertyRef Name="Wallet" />
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="TitleNo" />
+            <PropertyRef Name="TileName" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Amt" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="WalletId" Type="Int32" Nullable="false" />
-          <Property Name="Wallet" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserMail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TitleNo" Type="Int32" Nullable="false" />
+          <Property Name="TileName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -258,34 +243,32 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <EntitySetMapping Name="Records">
-            <EntityTypeMapping TypeName="Database1Model.Record">
-              <MappingFragment StoreEntitySet="Record">
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Amt" ColumnName="Amt" />
-                <ScalarProperty Name="Detail" ColumnName="Detail" />
-                <ScalarProperty Name="Wallet" ColumnName="Wallet" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+          <EntitySetMapping Name="t_Emp">
+            <EntityTypeMapping TypeName="Database1Model.t_Emp">
+              <MappingFragment StoreEntitySet="t_Emp">
+                <ScalarProperty Name="TitleNo" ColumnName="TitleNo" />
+                <ScalarProperty Name="UserMail" ColumnName="UserMail" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Wallets">
-            <EntityTypeMapping TypeName="Database1Model.Wallet">
-              <MappingFragment StoreEntitySet="Wallet">
-                <ScalarProperty Name="Wallet1" ColumnName="Wallet" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+          <EntitySetMapping Name="t_Title">
+            <EntityTypeMapping TypeName="Database1Model.t_Title">
+              <MappingFragment StoreEntitySet="t_Title">
+                <ScalarProperty Name="TitleName" ColumnName="TitleName" />
+                <ScalarProperty Name="TitleNo" ColumnName="TitleNo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="V_Records_With_Wallet">
-            <EntityTypeMapping TypeName="Database1Model.V_Records_With_Wallet">
-              <MappingFragment StoreEntitySet="V_Records_With_Wallet">
-                <ScalarProperty Name="Wallet" ColumnName="Wallet" />
-                <ScalarProperty Name="WalletId" ColumnName="WalletId" />
-                <ScalarProperty Name="Detail" ColumnName="Detail" />
-                <ScalarProperty Name="Amt" ColumnName="Amt" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+          <EntitySetMapping Name="V_Emplyee_with_Title">
+            <EntityTypeMapping TypeName="Database1Model.V_Emplyee_with_Title">
+              <MappingFragment StoreEntitySet="V_Emplyee_with_Title">
+                <ScalarProperty Name="TileName" ColumnName="TileName" />
+                <ScalarProperty Name="TitleNo" ColumnName="TitleNo" />
+                <ScalarProperty Name="UserMail" ColumnName="UserMail" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -1,0 +1,28 @@
+﻿@model WebApplication1.Models.ViewEmployee
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<table>
+    <tr>
+        <td>UserID</td>
+        <td>UserName</td>
+        <td>UserMail</td>
+        <td>TitleNo</td>
+        <td>TitleName</td>
+    </tr>
+    @foreach (var item in Model.Employeeslist)
+    {
+        <tr>
+            <td>@item.UserID</td>
+            <td>@item.UserName</td>
+            <td>@item.UserMail</td>
+            <td>@item.TitleNo</td>
+            <td>@item.TileName</td>
+        </tr>
+
+
+    }
+</table>

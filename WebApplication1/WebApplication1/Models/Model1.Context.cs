@@ -27,9 +27,9 @@ namespace WebApplication1.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Record> Records { get; set; }
-        public virtual DbSet<Wallet> Wallets { get; set; }
-        public virtual DbSet<V_Records_With_Wallet> V_Records_With_Wallet { get; set; }
+        public virtual DbSet<t_Emp> t_Emp { get; set; }
+        public virtual DbSet<t_Title> t_Title { get; set; }
+        public virtual DbSet<V_Emplyee_with_Title> V_Emplyee_with_Title { get; set; }
     
         public virtual ObjectResult<CustOrderHist_Result> CustOrderHist(string customerID)
         {

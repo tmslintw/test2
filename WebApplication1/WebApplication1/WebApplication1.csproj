@@ -129,14 +129,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AddItemController.cs" />
+    <Compile Include="Controllers\EmployeeShowController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ShowController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CustomerDemographic.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CustOrderHist_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -165,10 +161,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Record.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AddRecords.cs" />
     <Compile Include="Models\SalesByCategory_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -178,11 +170,14 @@
     <Compile Include="Models\Ten_Most_Expensive_Products_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ViewRecords.cs" />
-    <Compile Include="Models\V_Records_With_Wallet.cs">
+    <Compile Include="Models\t_Emp.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Wallet.cs">
+    <Compile Include="Models\t_Title.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewEmployee.cs" />
+    <Compile Include="Models\V_Emplyee_with_Title.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -256,14 +251,9 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\AddItem\Index.cshtml" />
-    <Content Include="Views\Show\Index.cshtml" />
-    <Content Include="Views\Show\Details.cshtml" />
-    <Content Include="Views\AddItem\Create.cshtml" />
-    <Content Include="Views\AddItem\CreateWallet.cshtml" />
+    <Content Include="Views\EmployeeShow\Index.cshtml" />
+    <Content Include="Views\EmployeeShow\Details.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
